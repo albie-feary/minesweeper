@@ -66,6 +66,10 @@ function checkForWin () {
   }
 }
 
+//reset the game
+function resetGame(){
+  location.reload();
+}
 
 //Count for surrounding Mines
 function countSurroundingMines (cell) {

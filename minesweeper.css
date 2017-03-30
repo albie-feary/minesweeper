@@ -25,6 +25,12 @@ body {
   flex-wrap: wrap;
 }
 
+.resetGame {
+  padding: 5px;
+  margin-top: 20px;
+}
+
+
 .board div {
   color: green;
   font-size: 2rem;
