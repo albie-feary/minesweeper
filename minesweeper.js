@@ -33,6 +33,16 @@ function newBoard() {
       board.cells.push(newCell);
     }
   }
+  //randomly plant the bombs around the board
+  var mineCount = 0;
+  var maxMines = 4;
+  while (mineCount < maxMines) {
+    var randomCell = Math.floor(Math.random() * 25)
+    if (board.cells[randomCell].isMine === false) {
+      (board.cells[randomCell].isMine = true)
+      mineCount ++
+    }
+  }
 }
 
 //check for win on board
