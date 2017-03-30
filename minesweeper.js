@@ -77,7 +77,7 @@ function checkForWin () {
   var countMarked= 0;
   for (var i=0; i<board.cells.length; i++) {
     //if a cell is not a mine and not hidden, add one to count
-    if ((board.cells[i].isMine !== true) && (board.cells.[i].hidden !== true)) {
+    if ((board.cells[i].isMine !== true) && (board.cells[i].hidden !== true)) {
       countMarked ++;
       //if a cell is a mine and has been marked, add one to the count
     } else if (board.cells[i].isMine && board.cells[i].isMarked) {
@@ -88,14 +88,11 @@ function checkForWin () {
     }
   }
   //once all cells are marked or not hidden, counts will add to 8 and a win
-  if (countMarked = 8) {
+  if (countMarked = 9) {
     lib.displayMessage("Crushed it!");
   }
 }
 
-
-
-}
 
 //Count for surrounding Mines
 function countSurroundingMines (cell) {
