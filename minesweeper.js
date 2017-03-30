@@ -1,76 +1,39 @@
 document.addEventListener('DOMContentLoaded', startGame)
 
-//Board`object defined
+//Random Board
+var rowLength = 5;
+var colLength = 5;
 var board = {
-    cells: [
-              { row:0,
-                col:0,
-                isMine:true,
-                hidden:true,
-                isMarked:false,
-                surroundingMines:0},
-              { row:0,
-                col:1,
-                isMine:false,
-                hidden:true,
-                isMarked:false,
-                surroundingMines:0},
-              { row:0,
-                col:2,
-                isMine:false,
-                hidden:true,
-                isMarked:false,
-                surroundingMines:0},
-              { row:1,
-                col:0,
-                isMine:false,
-                hidden:true,
-                isMarked:false,
-                surroundingMines:0},
-              { row:1,
-                col:1,
-                isMine:false,
-                hidden:true,
-                isMarked:false,
-                surroundingMines:0},
-              { row:1,
-                col:2,
-                isMine:false,
-                hidden:true,
-                isMarked:false,
-                surroundingMines:0},
-              { row:2,
-                col:0,
-                isMine:false,
-                hidden:true,
-                isMarked:false,
-                surroundingMines:0},
-              { row:2,
-                col:1,
-                isMine:false,
-                hidden:true,
-                isMarked:false,
-                surroundingMines:0},
-              { row:2,
-                col:2,
-                isMine:false,
-                hidden:true,
-                isMarked:false,
-                surroundingMines:0}
-            ]
-
+  cells:[]
 };
 
 //loop through all cells to listen for clicks
 function startGame () {
-  lib.initBoard();
+  newBoard();
   for (var i=0; i<board.cells.length; i++) {
     board.cells[i].surroundingMines = countSurroundingMines(board.cells[i]);
 };
+  lib.initBoard();
   document.addEventListener ('click', checkForWin);
   document.addEventListener ('contextmenu', checkForWin);
 };
 
+//Set up the new board
+function newBoard() {
+  for (var i = 0; i< rowLength; i++) {
+    for (var x =0; x< colLength; x++) {
+      var newCell = {
+        row: i,
+        col: x,
+        isMine: false,
+        isMarked: false,
+        hidden: true,
+        surroundingMines: 0
+      }
+      board.cells.push(newCell);
+    }
+  }
+}
 
 //check for win on board
 function checkForWin () {
@@ -87,8 +50,8 @@ function checkForWin () {
       return;
     }
   }
-  //once all cells are marked or not hidden, counts will add to 8 and a win
-  if (countMarked = 9) {
+  //once all cells are marked or not hidden, counts will add to 24 and a win
+  if (countMarked = 24) {
     lib.displayMessage("Crushed it!");
   }
 }
