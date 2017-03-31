@@ -49,8 +49,9 @@ function newBoard() {
 function audioClip(type) {
   if (type==='winner') {
     var audio = document.getElementsByTagName('audio')[0];
-    audio.play();
-  } /*else if (type==='lose') {
+  }
+  audio.play();
+  /*else if (type==='lose') {
     var audio = doucment.getElementByTagName('audio')[1];
     audio.play();
   }*/
@@ -74,7 +75,7 @@ function checkForWin () {
   }
   //once all cells are marked or not hidden, counts will add to 24 and a win
   if (countMarked = 24) {
-    lib.displayMessage("Crushed it!");
+    lib.displayMessage("That was Superb!");
     soundClip('winner');
   }
 }

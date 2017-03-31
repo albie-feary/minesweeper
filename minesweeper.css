@@ -8,6 +8,9 @@ body {
   align-items: center;
   justify-content: flex-center;
   flex-direction: column;
+  background-image: url('images/tree.jpg');
+  background-size: cover;
+  font-family: 'Arimo', sans-serif;
 }
 
 #message, #notes {
@@ -18,6 +21,7 @@ body {
 
 #message {
   font-size: 1.5rem;
+  text-align: center;
 }
 
 .board {
@@ -50,7 +54,7 @@ body {
 }
 
 div.mine, div.mine:hover {
-  background: no-repeat center/60% url("images/bomb.svg") crimson;
+  background: no-repeat center/60% url("images/boggis.jpg") #ecc153;
 }
 
 div.hidden {
@@ -62,5 +66,5 @@ div.hidden:hover {
 }
 
 div.marked, div.marked:hover {
-  background: no-repeat center/60% url("images/mark.svg") deepskyblue;
+  background: no-repeat center/100% url("images/image.jpg") #f2ce6d;
 }
