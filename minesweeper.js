@@ -45,6 +45,18 @@ function newBoard() {
   }
 }
 
+//Play sound for winning
+function audioClip(type) {
+  if (type==='winner') {
+    var audio = document.getElementsByTagName('audio')[0];
+    audio.play();
+  } /*else if (type==='lose') {
+    var audio = doucment.getElementByTagName('audio')[1];
+    audio.play();
+  }*/
+}
+
+
 //check for win on board
 function checkForWin () {
   var countMarked= 0;
@@ -63,6 +75,7 @@ function checkForWin () {
   //once all cells are marked or not hidden, counts will add to 24 and a win
   if (countMarked = 24) {
     lib.displayMessage("Crushed it!");
+    soundClip('winner');
   }
 }
 
@@ -70,6 +83,9 @@ function checkForWin () {
 function resetGame(){
   location.reload();
 }
+
+
+
 
 //Count for surrounding Mines
 function countSurroundingMines (cell) {
