@@ -75,7 +75,7 @@ function checkForWin () {
   }
   //once all cells are marked or not hidden, counts will add to 24 and a win
   if (countMarked = 24) {
-    lib.displayMessage("That was Superb!");
+    lib.displayMessage("You really are a Fanastic Fox!");
     soundClip('winner');
   }
 }
